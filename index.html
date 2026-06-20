@@ -18,9 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- non-blocking webfonts -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" /></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" /></noscript>
 <!-- preload LCP hero image (responsive) -->
 <link rel="preload" as="image" href="assets/hero-960.webp" imagesrcset="assets/hero-960.webp 960w, assets/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high" />
 <script type="application/ld+json">
@@ -43,7 +43,7 @@
     --ink:#3D2C21;
     --olive:#75673A;
     --line:rgba(75,53,39,.16);
-    --shadow:0 18px 50px -24px rgba(75,53,39,.5);
+    --shadow:0 10px 30px -22px rgba(75,53,39,.24);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:74px;}
@@ -61,13 +61,13 @@
   .narrow{max-width:64ch;margin-inline:auto;}
 
   /* ---- top bar + pill nav ---- */
-  .topbar{position:sticky;top:0;z-index:60;background:var(--terracotta);}
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(247,239,227,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
   .topbar-inner{display:flex;justify-content:center;align-items:center;gap:.45rem;padding:.5rem 1rem;}
-  .pillnav{display:flex;flex-wrap:wrap;justify-content:center;gap:.15rem;background:var(--paper);border-radius:999px;padding:.32rem;box-shadow:0 8px 22px -12px rgba(0,0,0,.35);}
+  .pillnav{display:flex;flex-wrap:wrap;justify-content:center;gap:.1rem;}
   .pillnav a{padding:.42rem .95rem;border-radius:999px;font-weight:700;font-size:.84rem;letter-spacing:.02em;color:var(--espresso);text-decoration:none;transition:background .15s,color .15s;}
-  .pillnav a:hover{background:var(--clay-soft);color:var(--terracotta-deep);}
-  .pill-cta{background:var(--paper);color:var(--btn);border-radius:999px;padding:.5rem 1.05rem;font-weight:700;font-size:.84rem;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 22px -12px rgba(0,0,0,.35);white-space:nowrap;transition:transform .15s,background .15s,color .15s;}
-  .pill-cta:hover{background:#fff;color:var(--btn-hover);transform:translateY(-1px);}
+  .pillnav a:hover{color:var(--terracotta);}
+  .pill-cta{background:var(--btn);color:#FBF4EA;border-radius:999px;padding:.5rem 1.1rem;font-weight:700;font-size:.84rem;letter-spacing:.02em;text-decoration:none;white-space:nowrap;transition:background .15s;}
+  .pill-cta:hover{background:var(--btn-hover);}
   @media(max-width:560px){ .topbar-inner{flex-wrap:wrap;} .pillnav a{padding:.4rem .6rem;font-size:.76rem;} .pillnav a[href="#top"]{display:none;} .pill-cta{font-size:.78rem;padding:.45rem .85rem;} }
 
   /* ---- logo lockup ---- */
@@ -76,7 +76,7 @@
   .logo-link{display:inline-block;line-height:0;border-radius:50%;transition:transform .2s ease;}
   .logo-link:hover{transform:scale(1.03);}
   .logo-link:focus-visible{outline:3px solid var(--terracotta);outline-offset:4px;}
-  .lockup .loc{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.34em;font-size:.72rem;color:var(--tag);text-transform:uppercase;padding-left:.34em;}
+  .lockup .loc{font-family:"Nunito Sans",sans-serif;font-weight:700;letter-spacing:.28em;font-size:.7rem;color:var(--tag);text-transform:uppercase;padding-left:.28em;}
 
   /* ---- full-bleed photo bands ---- */
   .band{width:100%;height:clamp(300px,40vw,440px);overflow:hidden;}
@@ -94,46 +94,38 @@
 
   /* ---- editorial sections ---- */
   .section{padding:clamp(3rem,7vw,5.4rem) 0;text-align:center;}
-  .section.tint{background:var(--clay-soft);}
-  /* faint dog-pattern watermark on alternating sections */
-  .wm{position:relative;isolation:isolate;}
-  .wm::before{content:"";position:absolute;inset:0;background-image:url(assets/watermark.webp);background-repeat:repeat;background-size:600px auto;opacity:.34;pointer-events:none;z-index:0;}
-  .section.tint.wm::before{opacity:.24;}
-  .wm > .wrap{position:relative;z-index:1;}
-  .sec-head{font-family:"Cinzel",serif;font-weight:600;text-transform:uppercase;
-    letter-spacing:.12em;color:var(--terracotta);
-    font-size:clamp(1.5rem,3.6vw,2.35rem);line-height:1.15;margin:0 0 .55rem;}
-  .sec-sub{font-family:"Fraunces",Georgia,serif;font-weight:600;color:var(--espresso);
-    font-size:clamp(1.12rem,2.2vw,1.45rem);line-height:1.3;margin:0 auto 1.5rem;max-width:30ch;}
+  .section.tint{background:transparent;}
+  .sec-head{font-family:"Fraunces",Georgia,serif;font-weight:500;
+    letter-spacing:-.01em;color:var(--espresso);
+    font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.12;margin:0 0 .5rem;}
+  .sec-sub{font-family:"Nunito Sans",sans-serif;font-weight:400;color:var(--olive);
+    font-size:clamp(1rem,1.6vw,1.15rem);line-height:1.45;margin:0 auto 1.6rem;max-width:40ch;}
   .section p{margin:0 auto 1.15em;color:var(--ink);}
   .section p:last-of-type{margin-bottom:0;}
 
   /* credentials line */
-  .creds{font-family:"Fraunces",serif;font-weight:600;color:var(--espresso);
-    letter-spacing:.02em;font-size:.95rem;margin:1.6rem auto .2rem;display:flex;
+  .creds{font-family:"Nunito Sans",sans-serif;font-weight:600;color:var(--espresso);
+    letter-spacing:.01em;font-size:.9rem;margin:1.6rem auto .2rem;display:flex;
     flex-wrap:wrap;justify-content:center;gap:.35rem .95rem;max-width:46ch;}
   .creds span{display:inline-flex;align-items:center;gap:.95rem;}
-  .creds span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--caramel);}
+  .creds span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--clay);}
   .creds span:last-child::after{display:none;}
 
   /* ---- button ---- */
   .btn{display:inline-flex;align-items:center;gap:.5em;background:var(--btn);color:#FBF4EA;
     font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.02em;
-    padding:.82em 1.9em;border-radius:999px;border:1.6px solid var(--btn);text-decoration:none;cursor:pointer;
-    transition:transform .18s,background .18s,box-shadow .18s;box-shadow:0 12px 26px -14px rgba(140,70,30,.8);}
-  .btn:hover{background:var(--btn-hover);border-color:var(--btn-hover);transform:translateY(-2px);}
+    padding:.78em 1.7em;border-radius:999px;border:1.6px solid var(--btn);text-decoration:none;cursor:pointer;
+    transition:background .18s;}
+  .btn:hover{background:var(--btn-hover);border-color:var(--btn-hover);}
   .btn--ghost{background:transparent;color:var(--espresso);border-color:var(--clay);box-shadow:none;}
   .btn--ghost:hover{background:rgba(203,169,135,.2);border-color:var(--caramel);color:var(--espresso);}
   .cta{margin-top:1.7rem;display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;}
 
   .paw{width:1em;height:1em;display:inline-block;fill:currentColor;vertical-align:-.12em;}
-  .divider{display:flex;align-items:center;justify-content:center;gap:.9rem;color:var(--clay);margin:0 auto;}
-  .divider::before,.divider::after{content:"";height:1px;flex:1;max-width:90px;background:repeating-linear-gradient(90deg,var(--clay) 0 7px,transparent 7px 15px);}
-  .divider svg{width:18px;height:18px;fill:var(--caramel);}
 
   /* ---- reviews ---- */
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.2rem;text-align:left;}
-  .quote{background:var(--paper-2);border-radius:20px;padding:1.6rem 1.5rem;box-shadow:var(--shadow);}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem 2.6rem;margin-top:2.4rem;text-align:left;}
+  .quote{padding:1.4rem 0 0;border-top:1px solid var(--line);}
   .quote .stars{color:var(--caramel);letter-spacing:.15em;font-size:.95rem;margin-bottom:.55rem;}
   .quote p{font-family:"Fraunces",serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--espresso);margin:0 0 .9rem;}
   .quote .who{font-weight:700;font-size:.88rem;color:var(--olive);}
@@ -141,12 +133,12 @@
 
   /* ---- about ---- */
   .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(1.8rem,4vw,3.4rem);align-items:center;text-align:left;margin-top:1.4rem;}
-  .about-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;border:6px solid var(--paper-2);box-shadow:var(--shadow);}
+  .about-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:var(--shadow);}
   .about-grid p{margin-inline:0;}
   @media(max-width:760px){ .about-grid{grid-template-columns:1fr;text-align:center;} .about-grid .ph{max-width:320px;margin-inline:auto;} .about-grid p{margin-inline:auto;} }
 
   /* ---- contact ---- */
-  form{max-width:560px;margin:2rem auto 0;text-align:left;background:var(--paper-2);border:1px solid var(--line);border-radius:24px;padding:clamp(1.4rem,3vw,2.2rem);box-shadow:var(--shadow);}
+  form{max-width:560px;margin:2rem auto 0;text-align:left;background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:clamp(1.4rem,3vw,2.2rem);}
   .field{margin-bottom:1rem;}
   .field.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:0;}
   label{display:block;font-weight:700;font-size:.84rem;margin-bottom:.32rem;color:var(--espresso);}
@@ -161,7 +153,7 @@
   .contacts a{display:inline-flex;align-items:center;gap:.55em;color:var(--espresso);text-decoration:none;}
   .contacts a:hover{color:var(--terracotta);}
   .contacts svg{width:1.15em;height:1.15em;stroke:var(--terracotta);fill:none;stroke-width:1.8;}
-  .area-tag{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.28em;font-size:.74rem;color:var(--tag);text-transform:uppercase;margin-top:1.8rem;}
+  .area-tag{font-family:"Nunito Sans",sans-serif;font-weight:700;letter-spacing:.24em;font-size:.72rem;color:var(--tag);text-transform:uppercase;margin-top:1.8rem;}
   /* form success / error feedback */
   .form-msg{max-width:560px;margin:1rem auto 0;border-radius:16px;padding:1.1rem 1.3rem;font-weight:600;text-align:center;}
   .form-msg.success{background:#E7EFD8;color:#3C4A24;border:1px solid #C4D3A6;}
@@ -171,7 +163,7 @@
   /* ---- footer ---- */
   footer.site{background:var(--espresso);color:#e9ddcd;text-align:center;padding:clamp(2.4rem,5vw,3.4rem) 0 1.8rem;}
   footer.site img{width:62px;height:62px;border-radius:50%;margin:0 auto .7rem;border:2px solid rgba(255,255,255,.2);}
-  footer .fname{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.18em;font-size:1.05rem;color:#fdf6ec;}
+  footer .fname{font-family:"Fraunces",Georgia,serif;font-weight:500;letter-spacing:.1em;font-size:1.12rem;color:#fdf6ec;}
   footer .fsub{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel);font-weight:700;margin-top:.25rem;}
   footer .fcontact{margin-top:1.1rem;font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.4rem;}
   footer .fcontact a{color:#e9ddcd;text-decoration:none;font-weight:600;}
@@ -235,7 +227,7 @@
 </section>
 
 <!-- INTRO -->
-<section class="section wm" id="intro">
+<section class="section" id="intro">
   <div class="wrap reveal">
     <h2 class="sec-head">Made for busy dog owners</h2>
     <div class="narrow">
@@ -265,7 +257,7 @@
 
 <div class="band reveal"><img src="assets/spitz-1600.webp" srcset="assets/spitz-800.webp 800w, assets/spitz-1600.webp 1600w" sizes="100vw" width="1600" height="560" loading="lazy" decoding="async" alt="A cream and ginger spitz dog smiling on a hilltop above the town" /></div>
 
-<section class="section wm">
+<section class="section">
   <div class="wrap reveal">
     <h2 class="sec-head">Adventure days out</h2>
     <p class="sec-sub">A bigger day in the great outdoors</p>
@@ -289,10 +281,8 @@
   </div>
 </section>
 
-<div class="divider reveal" aria-hidden="true"><svg class="paw"><use href="#paw"/></svg></div>
-
 <!-- REVIEWS -->
-<section class="section tint wm" id="reviews">
+<section class="section" id="reviews">
   <div class="wrap reveal">
     <h2 class="sec-head">What their owners say</h2>
     <p class="sec-sub">Happy dogs, happy humans</p>
@@ -334,7 +324,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="section tint wm" id="contact">
+<section class="section" id="contact">
   <div class="wrap reveal">
     <h2 class="sec-head">Get in touch</h2>
     <p class="sec-sub">Tell me about your dog</p>
