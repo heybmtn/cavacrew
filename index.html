@@ -73,6 +73,9 @@
   /* ---- logo lockup ---- */
   .lockup{text-align:center;padding:clamp(1.3rem,3vw,2.2rem) 0 clamp(.9rem,2.5vw,1.5rem);}
   .lockup img{width:clamp(104px,14vw,138px);height:auto;border-radius:50%;margin:0 auto .6rem;box-shadow:var(--shadow);border:3px solid var(--paper-2);}
+  .logo-link{display:inline-block;line-height:0;border-radius:50%;transition:transform .2s ease;}
+  .logo-link:hover{transform:scale(1.03);}
+  .logo-link:focus-visible{outline:3px solid var(--terracotta);outline-offset:4px;}
   .lockup .loc{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.34em;font-size:.72rem;color:var(--tag);text-transform:uppercase;padding-left:.34em;}
 
   /* ---- full-bleed photo bands ---- */
@@ -207,7 +210,6 @@
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
     </nav>
     <a class="pill-cta" href="#contact">Get a price</a>
   </div>
@@ -216,7 +218,9 @@
 <main id="content">
 <!-- LOGO LOCKUP -->
 <div class="lockup reveal">
-  <img src="assets/logo-140.webp" srcset="assets/logo-140.webp 140w, assets/logo-280.webp 280w" sizes="138px" width="140" height="140" alt="Cava Crew — dog walking services" fetchpriority="high" decoding="async" />
+  <a href="#top" class="logo-link" aria-label="Cava Crew — home">
+    <img src="assets/logo-140.webp" srcset="assets/logo-140.webp 140w, assets/logo-280.webp 280w" sizes="138px" width="140" height="140" alt="Cava Crew — dog walking services" fetchpriority="high" decoding="async" />
+  </a>
   <div class="loc">East Lothian</div>
 </div>
 
@@ -379,7 +383,7 @@
 
 <footer class="site">
   <div class="wrap">
-    <img src="assets/logo-140.webp" width="62" height="62" loading="lazy" decoding="async" alt="Cava Crew logo" />
+    <a href="#top" class="logo-link" aria-label="Cava Crew — home"><img src="assets/logo-140.webp" width="62" height="62" loading="lazy" decoding="async" alt="Cava Crew logo" /></a>
     <div class="fname">CAVA CREW</div>
     <div class="fsub">Dog Walking Services</div>
     <div class="fcontact">
