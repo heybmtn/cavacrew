@@ -53,7 +53,7 @@
     --shadow:0 10px 30px -22px rgba(75,53,39,.24);
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;scroll-padding-top:74px;}
+  html{scroll-behavior:smooth;scroll-padding-top:80px;font-size:110%;}
   .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:var(--espresso);color:#fff;padding:.7rem 1.1rem;border-radius:0 0 10px 0;font-weight:700;text-decoration:none;}
   .skip-link:focus{left:0;}
   body{
@@ -733,7 +733,7 @@
 
   /* ---- font-size stepper (80-150%, 10% steps) ---- */
   var pct = 100, MIN = 80, MAX = 150, STEP = 10;
-  function applyFont(){ document.documentElement.style.fontSize = (16 * pct / 100) + 'px'; pctLabel.textContent = pct + '%'; }
+  function applyFont(){ document.documentElement.style.fontSize = (17.6 * pct / 100) + 'px'; pctLabel.textContent = pct + '%'; }
   panel.querySelector('[data-act="font-dec"]').addEventListener('click', function(){ pct = Math.max(MIN, pct - STEP); applyFont(); });
   panel.querySelector('[data-act="font-inc"]').addEventListener('click', function(){ pct = Math.min(MAX, pct + STEP); applyFont(); });
 
