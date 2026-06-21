@@ -18,9 +18,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <!-- non-blocking webfonts -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Nunito+Sans:wght@400;600;700&display=swap" /></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" /></noscript>
 <!-- preload LCP hero image (responsive) -->
 <link rel="preload" as="image" href="assets/hero-960.webp" imagesrcset="assets/hero-960.webp 960w, assets/hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high" />
 <script type="application/ld+json">
@@ -86,7 +86,7 @@
   .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,26,16,.18) 0%,rgba(40,26,16,.12) 45%,rgba(40,26,16,.62) 100%);}
   .hero-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:clamp(1.6rem,4vw,3rem) 1.2rem clamp(1.8rem,4vw,2.8rem);}
-  .hero-h1{font-family:"Fraunces",Georgia,serif;font-weight:600;color:#fff;
+  .hero-h1{font-family:"Nunito Sans",system-ui,sans-serif;font-weight:800;color:#fff;
     font-size:clamp(2rem,5.2vw,3.5rem);line-height:1.08;margin:0 0 .5rem;max-width:18ch;
     text-shadow:0 2px 18px rgba(30,18,10,.5);}
   .hero-sub{color:#fdf3e8;font-weight:600;font-size:clamp(1rem,1.9vw,1.25rem);margin:0 0 1.3rem;text-shadow:0 1px 10px rgba(30,18,10,.55);}
@@ -95,7 +95,7 @@
   /* ---- editorial sections ---- */
   .section{padding:clamp(3rem,7vw,5.4rem) 0;text-align:center;}
   .section.tint{background:transparent;}
-  .sec-head{font-family:"Fraunces",Georgia,serif;font-weight:500;
+  .sec-head{font-family:"Nunito Sans",system-ui,sans-serif;font-weight:700;
     letter-spacing:-.01em;color:var(--espresso);
     font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.12;margin:0 0 .5rem;}
   .sec-sub{font-family:"Nunito Sans",sans-serif;font-weight:400;color:var(--olive);
@@ -127,7 +127,7 @@
   .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem 2.6rem;margin-top:2.4rem;text-align:left;}
   .quote{padding:1.4rem 0 0;border-top:1px solid var(--line);}
   .quote .stars{color:var(--caramel);letter-spacing:.15em;font-size:.95rem;margin-bottom:.55rem;}
-  .quote p{font-family:"Fraunces",serif;font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--espresso);margin:0 0 .9rem;}
+  .quote p{font-family:"Nunito Sans",system-ui,sans-serif;font-style:normal;font-size:1.02rem;line-height:1.55;color:var(--espresso);margin:0 0 .9rem;}
   .quote .who{font-weight:700;font-size:.88rem;color:var(--olive);}
   @media(max-width:760px){ .quotes{grid-template-columns:1fr;} }
 
@@ -163,7 +163,7 @@
   /* ---- footer ---- */
   footer.site{background:var(--espresso);color:#e9ddcd;text-align:center;padding:clamp(2.4rem,5vw,3.4rem) 0 1.8rem;}
   footer.site img{width:62px;height:62px;border-radius:50%;margin:0 auto .7rem;border:2px solid rgba(255,255,255,.2);}
-  footer .fname{font-family:"Fraunces",Georgia,serif;font-weight:500;letter-spacing:.1em;font-size:1.12rem;color:#fdf6ec;}
+  footer .fname{font-family:"Nunito Sans",system-ui,sans-serif;font-weight:800;letter-spacing:.06em;font-size:1.08rem;color:#fdf6ec;}
   footer .fsub{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--caramel);font-weight:700;margin-top:.25rem;}
   footer .fcontact{margin-top:1.1rem;font-size:.92rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.4rem;}
   footer .fcontact a{color:#e9ddcd;text-decoration:none;font-weight:600;}
@@ -185,8 +185,120 @@
     footer .fcontact a{min-height:40px;display:inline-flex;align-items:center;}
   }
 </style>
+
+<!-- ===== Accessibility widget styles (self-contained) ===== -->
+<style id="a11y-css">
+  :root{
+    --a11y-accent: var(--btn, #A8521F);
+    --a11y-accent-press: var(--btn-hover, #8F451F);
+    --a11y-ink: var(--ink, #3D2C21);
+    --a11y-line: var(--line, rgba(60,40,25,.18));
+    --a11y-surface:#fff;
+    --a11y-tile: var(--paper-2, #FCF7EF);
+    --a11y-label: var(--olive, #75673A);
+    --a11y-tint: rgba(168,82,31,.12);
+  }
+  /* --- effects are scoped to #page so they never touch the widget --- */
+  #page{ filter: var(--a11y-c, contrast(1)) var(--a11y-s, saturate(1)); }
+  #page.a11y-hl-title :is(h1,h2,h3){ background:rgba(204,154,94,.40)!important; box-shadow:0 0 0 2px rgba(168,82,31,.55)!important; border-radius:3px; }
+  #page.a11y-hl-links a{ background:rgba(204,154,94,.32)!important; box-shadow:0 0 0 1.5px rgba(168,82,31,.5)!important; text-decoration:underline!important; }
+  #page.a11y-dyslexia, #page.a11y-dyslexia *{ font-family:'OpenDyslexic','Comic Sans MS',cursive!important; }
+  #page.a11y-spacing, #page.a11y-spacing *{ letter-spacing:.06em!important; }
+  #page.a11y-lineheight, #page.a11y-lineheight *{ line-height:1.9!important; }
+  #page.a11y-bold, #page.a11y-bold *{ font-weight:700!important; }
+  #page.a11y-alignleft, #page.a11y-alignleft *{ text-align:left!important; }
+  #page.a11y-nomotion *, #page.a11y-nomotion *::before, #page.a11y-nomotion *::after{
+    animation-duration:.001s!important; animation-delay:0s!important;
+    transition-duration:.001s!important; transition-delay:0s!important; scroll-behavior:auto!important; }
+  #page.a11y-nomotion .reveal{ opacity:1!important; transform:none!important; }
+  html.a11y-bigcursor, html.a11y-bigcursor *{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38'%3E%3Cpath d='M7 4 L7 31 L14 24 L19 35 L24 33 L19 22 L29 22 Z' fill='black' stroke='white' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E") 7 4, auto !important; }
+
+  /* --- FAB --- */
+  .a11y-fab{ position:fixed; z-index:2147483600; right:max(18px,env(safe-area-inset-right,0px));
+    bottom:calc(env(safe-area-inset-bottom,0px) + 18px); width:58px; height:58px; border-radius:50%;
+    border:none; background:var(--a11y-accent); color:#fff; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 8px 22px rgba(40,26,16,.30); transition:transform .15s ease, background .15s ease; font:inherit; }
+  .a11y-fab svg{ width:32px; height:32px; }
+  .a11y-fab:hover{ background:var(--a11y-accent-press); transform:translateY(-2px); }
+  .a11y-fab:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:3px; }
+
+  /* --- Panel --- */
+  .a11y-panel{ position:fixed; z-index:2147483600; right:max(18px,env(safe-area-inset-right,0px));
+    bottom:calc(env(safe-area-inset-bottom,0px) + 88px); width:min(360px, calc(100vw - 32px));
+    max-height:min(80vh, 660px); overflow:auto; background:var(--a11y-surface); color:var(--a11y-ink);
+    border:1px solid var(--a11y-line); border-radius:18px; box-shadow:0 24px 60px -16px rgba(40,26,16,.42);
+    font-family:"Nunito Sans", system-ui, -apple-system, sans-serif; font-size:15px; line-height:1.4;
+    opacity:0; visibility:hidden; transform:translateY(10px);
+    transition:opacity .18s ease, transform .18s ease; }
+  .a11y-panel.is-open{ opacity:1; visibility:visible; transform:none; }
+  .a11y-panel *{ box-sizing:border-box; }
+  .a11y-head{ position:sticky; top:0; z-index:2; display:flex; align-items:center; gap:8px;
+    padding:13px 14px; background:var(--a11y-surface); border-bottom:1px solid var(--a11y-line); }
+  .a11y-head h2{ margin:0 auto 0 2px; font-size:16px; font-weight:800; color:var(--a11y-ink); font-family:inherit; }
+  .a11y-iconbtn{ width:40px; height:40px; border-radius:10px; border:1px solid var(--a11y-line);
+    background:var(--a11y-tile); color:var(--a11y-ink); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .a11y-iconbtn svg{ width:18px; height:18px; }
+  .a11y-iconbtn:hover{ border-color:var(--a11y-accent); color:var(--a11y-accent); }
+  .a11y-iconbtn:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:2px; }
+
+  .a11y-body{ padding:12px 14px 16px; }
+  .a11y-section{ margin-top:15px; }
+  .a11y-section:first-child{ margin-top:2px; }
+  .a11y-seclabel{ font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--a11y-label); margin:0 0 8px 2px; }
+  .a11y-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .a11y-wide{ grid-column:1 / -1; }
+
+  .a11y-tile{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; min-height:62px;
+    padding:10px 11px; border:1.5px solid var(--a11y-line); border-radius:12px; background:var(--a11y-tile);
+    color:var(--a11y-ink); font:inherit; text-align:left; cursor:pointer; transition:border-color .12s, background .12s; }
+  .a11y-tile .ic{ display:flex; }
+  .a11y-tile .ic svg{ width:22px; height:22px; color:var(--a11y-accent); }
+  .a11y-tile .lbl{ font-size:12.5px; font-weight:700; line-height:1.15; }
+  .a11y-tile:hover{ border-color:var(--a11y-accent); }
+  .a11y-tile[aria-pressed="true"]{ border-color:var(--a11y-accent); background:var(--a11y-tint); }
+  .a11y-tile:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:2px; }
+
+  .a11y-step{ display:flex; align-items:center; gap:10px; min-height:62px; padding:8px 11px;
+    border:1.5px solid var(--a11y-line); border-radius:12px; background:var(--a11y-tile); }
+  .a11y-step .lbl{ font-size:12.5px; font-weight:700; margin-right:auto; display:flex; align-items:center; gap:8px; }
+  .a11y-step .lbl svg{ width:22px; height:22px; color:var(--a11y-accent); }
+  .a11y-step .ctrls{ display:flex; align-items:center; gap:6px; }
+  .a11y-stepbtn{ width:44px; height:44px; border-radius:10px; border:1.5px solid var(--a11y-line);
+    background:var(--a11y-surface); color:var(--a11y-ink); font-size:22px; font-weight:700; line-height:1;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .a11y-stepbtn:hover{ border-color:var(--a11y-accent); color:var(--a11y-accent); }
+  .a11y-stepbtn:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:2px; }
+  .a11y-pct{ min-width:50px; text-align:center; font-weight:800; font-size:14px; }
+
+  .a11y-lang{ width:100%; display:flex; align-items:center; min-height:48px; padding:10px 12px;
+    border:1.5px solid var(--a11y-line); border-radius:12px; background:var(--a11y-tile);
+    color:var(--a11y-ink); font:inherit; cursor:pointer; }
+  .a11y-lang .lbl{ font-weight:700; font-size:13px; margin-right:auto; }
+  .a11y-lang .cur{ font-size:13px; color:var(--a11y-label); display:flex; align-items:center; gap:4px; }
+  .a11y-lang .cur svg{ width:15px; height:15px; }
+  .a11y-lang:hover{ border-color:var(--a11y-accent); }
+  .a11y-lang:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:2px; }
+  .a11y-langnote{ margin:8px 2px 0; font-size:12.5px; color:var(--a11y-label); }
+  .a11y-langnote[hidden]{ display:none; }
+
+  .a11y-resetbtn{ width:100%; margin-top:18px; min-height:48px; border:1.5px solid var(--a11y-accent);
+    border-radius:12px; background:var(--a11y-surface); color:var(--a11y-accent); font:inherit; font-weight:800;
+    font-size:13.5px; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .a11y-resetbtn svg{ width:18px; height:18px; }
+  .a11y-resetbtn:hover{ background:var(--a11y-tint); }
+  .a11y-resetbtn:focus-visible{ outline:3px solid var(--a11y-accent-press); outline-offset:2px; }
+
+  .a11y-guide{ position:fixed; left:0; right:0; top:0; height:42px; transform:translateY(-50%);
+    z-index:2147483200; pointer-events:none; display:none; background:rgba(168,82,31,.16);
+    border-top:2px solid rgba(168,82,31,.55); border-bottom:2px solid rgba(168,82,31,.55); }
+  .a11y-guide.is-on{ display:block; }
+
+  @media (prefers-reduced-motion: reduce){ .a11y-panel{ transition:none; } .a11y-fab{ transition:none; } }
+</style>
 </head>
 <body id="top">
+<div id="page">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="paw" viewBox="0 0 24 24"><path d="M5.5 11.5c1.1 0 1.9-1.2 1.9-2.6S6.6 6.3 5.5 6.3 3.6 7.5 3.6 8.9 4.4 11.5 5.5 11.5Zm13 0c1.1 0 1.9-1.2 1.9-2.6s-.8-2.6-1.9-2.6-1.9 1.2-1.9 2.6.8 2.6 1.9 2.6ZM9.2 8.4c1.1 0 2-1.3 2-2.9s-.9-2.9-2-2.9-2 1.3-2 2.9.9 2.9 2 2.9Zm5.6 0c1.1 0 2-1.3 2-2.9s-.9-2.9-2-2.9-2 1.3-2 2.9.9 2.9 2 2.9ZM12 12.2c-2.7 0-5 2.4-5 4.7 0 1.7 1.3 2.6 3 2.6.9 0 1.4-.3 2-.3s1.1.3 2 .3c1.7 0 3-.9 3-2.6 0-2.3-2.3-4.7-5-4.7Z"/></symbol>
@@ -384,6 +496,40 @@
     <div class="copy">© <span id="yr"></span> Cava Crew. Made with care, one walk at a time 🐾</div>
   </div>
 </footer>
+</div><!-- /#page -->
+
+<!-- ===== Accessibility widget ===== -->
+<button id="a11yFab" class="a11y-fab" type="button" aria-label="Open accessibility menu" aria-expanded="false" aria-controls="a11yPanel"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.3" r="1.9" fill="currentColor" stroke="none"/><path d="M4.5 8.3c2.4 .95 4.9 1.4 7.5 1.4s5.1-.45 7.5-1.4"/><path d="M12 8.7v6.1"/><path d="M8.8 20.5 12 14.8l3.2 5.7"/></svg></button>
+<div id="a11yPanel" class="a11y-panel" role="dialog" aria-label="Accessibility menu" aria-hidden="true">
+  <div class="a11y-head">
+    <h2>Accessibility</h2>
+    <button class="a11y-iconbtn" type="button" data-act="reset" aria-label="Reset all accessibility settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M3.6 4v4h4"/></svg></button>
+    <button class="a11y-iconbtn" type="button" data-act="close" aria-label="Close accessibility menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 18 18M18 6 6 18"/></svg></button>
+  </div>
+  <div class="a11y-body">
+    <div class="a11y-section">
+      <p class="a11y-seclabel">Language</p>
+      <button class="a11y-lang" type="button" data-act="lang" aria-expanded="false" aria-controls="a11yLangNote">
+        <span class="lbl">Language</span><span class="cur">English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+      <p class="a11y-langnote" id="a11yLangNote" data-el="langnote" hidden>On-site translation isn't connected yet.</p>
+    </div>
+    <div class="a11y-section">
+      <p class="a11y-seclabel">Content adjustments</p>
+      <div class="a11y-grid"><div class="a11y-step a11y-wide"><span class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18 6.4 7.5 9.8 18"/><path d="M4.1 14.4h4.6"/><path d="M13.4 18 16.4 9.6 19.4 18"/><path d="M14.3 15.3h4.2"/></svg>Font size</span><span class="ctrls"><button class="a11y-stepbtn" type="button" data-act="font-dec" aria-label="Decrease font size">−</button><span class="a11y-pct" data-el="pct" aria-live="polite">100%</span><button class="a11y-stepbtn" type="button" data-act="font-inc" aria-label="Increase font size">+</button></span></div><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-hl-title"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h6"/><path d="M14.4 4.6 19 9.2 11 17.2l-4 1 1-4z"/></svg></span><span class="lbl">Highlight Title</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-hl-links"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2-2a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M13.5 10.5a3.5 3.5 0 0 0-5 0l-2 2a3.5 3.5 0 0 0 5 5l1-1"/></svg></span><span class="lbl">Highlight Links</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-dyslexia"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="13" r="3"/><circle cx="16" cy="13" r="3"/><path d="M11 13h2"/><path d="M5.5 10.5 6.6 8M18.5 10.5 17.4 8"/></svg></span><span class="lbl">Dyslexia Font</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-spacing"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5v14"/><path d="M20 5v14"/><path d="M8.5 12h7"/><path d="M8.5 12 10.5 10M8.5 12l2 2M15.5 12l-2-2M15.5 12l-2 2"/></svg></span><span class="lbl">Letter Spacing</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-lineheight"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6h10"/><path d="M10 12h10"/><path d="M10 18h10"/><path d="M5 5v14"/><path d="M5 5 3.6 6.4M5 5l1.4 1.4M5 19l-1.4-1.4M5 19l1.4 1.4"/></svg></span><span class="lbl">Line Height</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-bold"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 5h5.5a3.2 3.2 0 0 1 0 6.5H7.5z"/><path d="M7.5 11.5h6.4a3.2 3.2 0 0 1 0 6.5H7.5z"/></svg></span><span class="lbl">Font Weight</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-alignleft"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 10h9"/><path d="M4 14h16"/><path d="M4 18h9"/></svg></span><span class="lbl">Align Left</span></button></div>
+    </div>
+    <div class="a11y-section">
+      <p class="a11y-seclabel">Colour adjustments</p>
+      <div class="a11y-grid"><button class="a11y-tile" type="button" aria-pressed="false" data-axis="c" data-filter="brightness(1.06) contrast(1.08)"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8a8.2 8.2 0 0 1 0 16.4z" fill="currentColor" stroke="none"/></svg></span><span class="lbl">Light Contrast</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-axis="c" data-filter="contrast(1.55)"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8a8.2 8.2 0 0 1 0 16.4z" fill="currentColor" stroke="none"/></svg></span><span class="lbl">High Contrast</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-axis="s" data-filter="saturate(1.9)"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2s6.2 6.6 6.2 11.1A6.2 6.2 0 0 1 5.8 14.3C5.8 9.8 12 3.2 12 3.2z"/></svg></span><span class="lbl">High Saturation</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-axis="s" data-filter="saturate(0.45)"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2s6.2 6.6 6.2 11.1A6.2 6.2 0 0 1 5.8 14.3C5.8 9.8 12 3.2 12 3.2z"/></svg></span><span class="lbl">Low Saturation</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-axis="s" data-filter="grayscale(1)"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8a8.2 8.2 0 0 0 0 16.4z" fill="currentColor" stroke="none"/></svg></span><span class="lbl">Monochrome</span></button></div>
+    </div>
+    <div class="a11y-section">
+      <p class="a11y-seclabel">Navigation adjustments</p>
+      <div class="a11y-grid"><button class="a11y-tile" type="button" aria-pressed="false" data-act="guide"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 12h18"/><path d="M3 8h18" opacity=".4"/><path d="M3 16h18" opacity=".4"/></svg></span><span class="lbl">Reading Guide</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-class="a11y-nomotion"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1.1" fill="currentColor" stroke="none"/><rect x="13.6" y="5" width="3.4" height="14" rx="1.1" fill="currentColor" stroke="none"/></svg></span><span class="lbl">Stop Animations</span></button><button class="a11y-tile" type="button" aria-pressed="false" data-act="bigcursor"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4 19 10.5 13.4 12.4 11.6 18z" fill="currentColor" stroke="none"/></svg></span><span class="lbl">Big Cursor</span></button></div>
+    </div>
+    <button class="a11y-resetbtn" type="button" data-act="reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M3.6 4v4h4"/></svg>Reset settings</button>
+  </div>
+</div>
+<div id="a11yGuide" class="a11y-guide" aria-hidden="true"></div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -434,6 +580,139 @@
     _showMsg('success','Your email app should have opened with your enquiry ready to send. If not, please '+_help);
     return false;
   }
+</script>
+
+<!-- ===== Accessibility widget logic ===== -->
+<script>
+(function(){
+  var page = document.getElementById('page');
+  var fab = document.getElementById('a11yFab');
+  var panel = document.getElementById('a11yPanel');
+  var guide = document.getElementById('a11yGuide');
+  if(!page || !fab || !panel) return;
+  var html = document.documentElement;
+  var closeBtn = panel.querySelector('[data-act="close"]');
+  var pctLabel = panel.querySelector('[data-el="pct"]');
+  var langBtn  = panel.querySelector('[data-act="lang"]');
+  var langNote = panel.querySelector('[data-el="langnote"]');
+
+  /* ---- open / close ---- */
+  var open = false;
+  function onKey(e){ if(e.key === 'Escape') closePanel(); }
+  function onDown(e){ if(!panel.contains(e.target) && !fab.contains(e.target)) closePanel(); }
+  function openPanel(){
+    open = true; panel.classList.add('is-open'); panel.setAttribute('aria-hidden','false');
+    fab.setAttribute('aria-expanded','true');
+    closeBtn.focus();
+    document.addEventListener('keydown', onKey); document.addEventListener('mousedown', onDown);
+  }
+  function closePanel(){
+    open = false; panel.classList.remove('is-open'); panel.setAttribute('aria-hidden','true');
+    fab.setAttribute('aria-expanded','false');
+    document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown);
+    fab.focus();
+  }
+  fab.addEventListener('click', function(){ open ? closePanel() : openPanel(); });
+  closeBtn.addEventListener('click', closePanel);
+
+  /* ---- dyslexia font loaded on demand ---- */
+  var dysLoaded = false;
+  function loadDyslexia(){
+    if(dysLoaded) return; dysLoaded = true;
+    var l = document.createElement('link');
+    l.rel = 'stylesheet'; l.href = 'https://fonts.cdnfonts.com/css/opendyslexic';
+    document.head.appendChild(l);
+  }
+
+  /* ---- simple class toggles on #page ---- */
+  panel.querySelectorAll('[data-class]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var cls = btn.getAttribute('data-class');
+      var on  = btn.getAttribute('aria-pressed') === 'true';
+      if(on){ page.classList.remove(cls); btn.setAttribute('aria-pressed','false'); }
+      else { if(cls === 'a11y-dyslexia') loadDyslexia(); page.classList.add(cls); btn.setAttribute('aria-pressed','true'); }
+      if(cls === 'a11y-nomotion'){
+        if(!on){ html.style.scrollBehavior = 'auto'; page.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+        else { html.style.scrollBehavior = ''; }
+      }
+    });
+  });
+
+  /* ---- colour axes: mutually exclusive per axis, composable across axes ---- */
+  panel.querySelectorAll('[data-axis]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var axis = btn.getAttribute('data-axis');           // 'c' or 's'
+      var prop = (axis === 'c') ? '--a11y-c' : '--a11y-s';
+      var on   = btn.getAttribute('aria-pressed') === 'true';
+      panel.querySelectorAll('[data-axis="'+axis+'"]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      if(on){ page.style.removeProperty(prop); }
+      else { page.style.setProperty(prop, btn.getAttribute('data-filter')); btn.setAttribute('aria-pressed','true'); }
+    });
+  });
+
+  /* ---- big cursor (set on <html> so it covers the whole viewport, widget included) ---- */
+  var bigBtn = panel.querySelector('[data-act="bigcursor"]');
+  bigBtn.addEventListener('click', function(){
+    var on = bigBtn.getAttribute('aria-pressed') === 'true';
+    html.classList.toggle('a11y-bigcursor', !on);
+    bigBtn.setAttribute('aria-pressed', on ? 'false' : 'true');
+  });
+
+  /* ---- reading guide (listeners attached only while active) ---- */
+  var guideBtn = panel.querySelector('[data-act="guide"]');
+  function moveGuide(e){
+    var y = (e.touches && e.touches[0]) ? e.touches[0].clientY : e.clientY;
+    if(y != null) guide.style.top = y + 'px';
+  }
+  function guideOn(){ guide.classList.add('is-on'); window.addEventListener('mousemove', moveGuide); window.addEventListener('touchmove', moveGuide, {passive:true}); }
+  function guideOff(){ guide.classList.remove('is-on'); window.removeEventListener('mousemove', moveGuide); window.removeEventListener('touchmove', moveGuide); }
+  guideBtn.addEventListener('click', function(){
+    var on = guideBtn.getAttribute('aria-pressed') === 'true';
+    if(on){ guideOff(); guideBtn.setAttribute('aria-pressed','false'); }
+    else { guideOn(); guideBtn.setAttribute('aria-pressed','true'); }
+  });
+
+  /* ---- font-size stepper (80-150%, 10% steps) ---- */
+  var pct = 100, MIN = 80, MAX = 150, STEP = 10;
+  function applyFont(){ document.documentElement.style.fontSize = (16 * pct / 100) + 'px'; pctLabel.textContent = pct + '%'; }
+  panel.querySelector('[data-act="font-dec"]').addEventListener('click', function(){ pct = Math.max(MIN, pct - STEP); applyFont(); });
+  panel.querySelector('[data-act="font-inc"]').addEventListener('click', function(){ pct = Math.min(MAX, pct + STEP); applyFont(); });
+
+  /* ---- language placeholder (display-only; does not translate) ---- */
+  langBtn.addEventListener('click', function(){
+    var exp = langBtn.getAttribute('aria-expanded') === 'true';
+    langBtn.setAttribute('aria-expanded', exp ? 'false' : 'true');
+    langNote.hidden = exp;
+  });
+
+  /* ---- reset everything ---- */
+  var EFFECT_CLASSES = ['a11y-hl-title','a11y-hl-links','a11y-dyslexia','a11y-spacing','a11y-lineheight','a11y-bold','a11y-alignleft','a11y-nomotion'];
+  function resetAll(){
+    EFFECT_CLASSES.forEach(function(c){ page.classList.remove(c); });
+    page.style.removeProperty('--a11y-c'); page.style.removeProperty('--a11y-s');
+    html.classList.remove('a11y-bigcursor'); html.style.scrollBehavior = '';
+    document.documentElement.style.fontSize = ''; pct = 100; pctLabel.textContent = '100%';
+    guideOff();
+    panel.querySelectorAll('[aria-pressed]').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+    langBtn.setAttribute('aria-expanded','false'); langNote.hidden = true;
+  }
+  panel.querySelectorAll('[data-act="reset"]').forEach(function(b){ b.addEventListener('click', resetAll); });
+
+  /* ---- PERSISTENCE (in-memory by default; resets on reload) ----------------------
+     To remember settings on the live site, persist to localStorage and re-apply on load.
+     Uncomment and wire into the handlers above:
+
+     // function save(){ localStorage.setItem('cc-a11y', JSON.stringify({
+     //   pct: pct,
+     //   classes: EFFECT_CLASSES.filter(function(c){ return page.classList.contains(c); }),
+     //   c: page.style.getPropertyValue('--a11y-c'),
+     //   s: page.style.getPropertyValue('--a11y-s'),
+     //   big: html.classList.contains('a11y-bigcursor')
+     // })); }
+     // (call save() at the end of every toggle/stepper handler, and read it back on init,
+     //  re-applying pct via applyFont(), the classes/axes/cursor, and syncing each tile's aria-pressed.)
+  --------------------------------------------------------------------------------- */
+})();
 </script>
 </body>
 </html>
